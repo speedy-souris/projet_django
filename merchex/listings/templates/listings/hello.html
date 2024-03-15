@@ -5,7 +5,13 @@
 <p>Mes {{bands|length }} références préférés sont :</p>
 <ul>
     {% for band in bands %}
-        <li>{{band.name}} - {{band.title}}</li>
+        <li>{{band.name}},
+               {{band.genre}},
+               {{band.biography}},
+               {{band.year_formed}},
+               {{band.active}},
+               {{band.official_homepage}},
+        </li>
     {% endfor %}
 </ul>
 {% endblock %}

@@ -5,7 +5,12 @@
 <p>voici la liste d'annonce :<p>
 <ul>
     {% for article in articles %}
-        <li>{{article.title}} - {{article.date}}</li>
+        <li>{{article.title}} - 
+              {{article.date}} - 
+              {{article.types}} - 
+              {{article.description}} - 
+              {{article.sold}}
+        </li>
     {% endfor %}
 </ul>
 {% endblock %}
