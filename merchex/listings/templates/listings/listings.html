@@ -1,12 +1,11 @@
-<html>
-    <head><title>Merchex</title><head>
-    <body>
-        <h1>Listings</h1>
-        <p>voici la liste d'annonce :<p>
-        <ul>
-            {% for article in articles %}
-                <li>{{article.title}} - {{article.date}}</li>
-            {% endfor %}
-        </ul>
-    </body>
-</html>
+{% extends 'listings/base.html' %}
+
+{% block content %}
+<h1>Listings</h1>
+<p>voici la liste d'annonce :<p>
+<ul>
+    {% for article in articles %}
+        <li>{{article.title}} - {{article.date}}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

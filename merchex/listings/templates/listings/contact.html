@@ -1,6 +1,6 @@
-<html>
-    <head><title>Merchex</title><head>
-    <body>
+{% extends 'listings/base.html' %}
+
+{% block content %}
         <h1>Contact</h1>
         <p>voici les {{contacts|length}} contacts<p>
         <ul>
@@ -8,5 +8,4 @@
                 <li>{{contact.first_name}} - {{contact.email}}</li>
             {% endfor %}
         </ul>
-    </body>
-</html>
+{% endblock %}

@@ -1,13 +1,11 @@
-<html>
-    <head><title>Merchex</title></head>
-    <body>
-        <h1>Hello Django !</h1>
-        <p>Mes {{bands|length }} références préférés sont :</p>
-        <!-- TODO : liste des groupes -->
-        <ul>
-            {% for band in bands %}
-                <li>{{band.name}} - {{band.title}}</li>
-            {% endfor %}
-        </ul>
-    </body>
-</html>
+{% extends 'listings/base.html' %}
+
+{% block content %}
+<h1>Hello Django !</h1>
+<p>Mes {{bands|length }} références préférés sont :</p>
+<ul>
+    {% for band in bands %}
+        <li>{{band.name}} - {{band.title}}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
