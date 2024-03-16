@@ -1,11 +1,12 @@
 {% extends 'listings/base.html' %}
 
 {% block content %}
-<h1>Listings</h1>
-<p>voici la liste d'annonce :<p>
+
+<h1>article</h1>
+
 <ul>
     {% for article in articles %}
-        <li>{{article.title}} - 
+        <li><a href="{% url 'article-detail' article.id %}">{{article.title}}</a> -
               {{article.date}} - 
               {{article.types}} - 
               {{article.description}} - 
