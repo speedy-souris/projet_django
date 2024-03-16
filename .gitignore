@@ -1,0 +1,7 @@
+DJANGO_ENV/
+merchex/db.sqlite3
+merchex/merchex/__pycache__/
+merchex/listings/__pycache__/
+merchex/listings/migrations/__pycache__/
+merchex/listings/migrations/
+
