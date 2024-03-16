@@ -34,6 +34,10 @@ class Article(models.Model):
     types = models.fields.CharField(choices=Type.choices, max_length=5)
     description = models.fields.CharField(max_length=1000)
     sold = models.fields.BooleanField(default=False)
+    band = models.ForeignKey(Band, null=True, on_delete=models.SET_NULL)
+
+    def __str__(self):
+        return f'{self.title}'
 
 class Contact(models.Model):
     first_name = models.fields.CharField(max_length=30)
