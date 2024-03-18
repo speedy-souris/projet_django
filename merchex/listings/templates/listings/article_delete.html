@@ -1,0 +1,14 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+
+<h1>Effacement de l'article</h1>
+
+<p>Etes-vous sûr de vouloir supprimer l'article : {{ article.title }} ?</p>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Effacer">
+</form>
+
+{% endblock %}

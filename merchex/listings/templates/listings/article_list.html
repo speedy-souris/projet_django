@@ -14,6 +14,7 @@
               {{article.description}} - 
               {{article.sold}}
             - <a href="{% url 'article-update' article.id %}">[Modifier]</a>
+            - <a href="{% url 'article-delete' article.id %}">[Effacer]</a>
         </li>
     {% endfor %}
 </ul>

@@ -47,6 +47,18 @@ def band_update(request, id):
                   {'form': form})
 
 
+def band_delete(request, id):
+    band = Band.objects.get(id=id)
+    if request.method == 'POST':
+        # supprimer le groupe de la base de données
+        band.delete()
+        # rediriger vers la liste des groupes
+        return redirect('band-list')
+    return render(request,
+                  'listings/band_delete.html',
+                  {'band': band})
+
+
 def band_detail(request, id):
     band = Band.objects.get(id=id)
     return render(request,
@@ -92,11 +104,26 @@ def article_update(request, id):
                   {'form': form})
 
 
+
+
+
 def article_list(request):
     articles = Article.objects.all()
     return render(request,
                   'listings/article_list.html',
                   {'articles': articles})
+
+
+def article_delete(request, id):
+    article = Article.objects.get(id=id)
+    if request.method == 'POST':
+        # supprimer le groupe de la base de données
+        article.delete()
+        # rediriger vers la liste des groupes
+        return redirect('article-list')
+    return render(request,
+                  'listings/article_delete.html',
+                  {'article': article})
 
 
 def article_detail(request, id):

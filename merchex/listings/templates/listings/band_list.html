@@ -13,7 +13,8 @@
                 {{band.year_formed}},
                 {{band.active}},
                 {{band.official_homepage}},
-                - <a href="{% url 'band-update' band.id %}">[Modifié]</a>
+                - <a href="{% url 'band-update' band.id %}">[Modifier]</a>
+                - <a href="{% url 'band-delete' band.id %}">[Effacer]</a>
             </li>
         {% endfor %}
     </ul>
