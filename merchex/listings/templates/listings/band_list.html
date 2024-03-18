@@ -13,6 +13,7 @@
                 {{band.year_formed}},
                 {{band.active}},
                 {{band.official_homepage}},
+                - <a href="{% url 'band-update' band.id %}">[Modifié]</a>
             </li>
         {% endfor %}
     </ul>

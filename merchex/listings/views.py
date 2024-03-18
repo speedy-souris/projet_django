@@ -31,6 +31,22 @@ def band_create(request):
                   {'form': form})
 
 
+def band_update(request, id):
+    band = Band.objects.get(id=id)
+    if request.method == 'POST':
+        form = BandForm(request.POST, instance=band)
+        if form.is_valid():
+            # mettre à jour le groupe existant dans la base de données
+            form.save()
+            # rediriger vers la page détaillée du groupe que nous venons de mettre à jour
+            return redirect('band-detail', band.id)
+    else:
+        form = BandForm(instance=band)  # on pré-remplir le formulaire avec un groupe existant
+    return render(request,
+                  'listings/band_update.html',
+                  {'form': form})
+
+
 def band_detail(request, id):
     band = Band.objects.get(id=id)
     return render(request,
@@ -57,6 +73,22 @@ def article_create(request):
 
     return render(request,
                   'listings/article_create.html',
+                  {'form': form})
+
+
+def article_update(request, id):
+    article = Article.objects.get(id=id)
+    if request.method == 'POST':
+        form = ArticleForm(request.POST, instance=article)
+        if form.is_valid():
+            # mettre à jour le groupe existant dans la base de données
+            form.save()
+            # rediriger vers la page détaillée du groupe que nous venons de mettre à jour
+            return redirect('article-detail', article.id)
+    else:
+        form = ArticleForm(instance=article)  # on pré-remplir le formulaire avec un groupe existant
+    return render(request,
+                  'listings/article_update.html',
                   {'form': form})
 
 

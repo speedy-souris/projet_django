@@ -11,5 +11,7 @@
      <li>actif : {{ article.sold|yesno }}</li>
 </ul>
 
+<a href="{% url 'article-update' article.id %}">Modifier cet article</a>
+
 <a href="{% url 'article-list' %}">Retour à tous les articles</a>
 {% endblock %}

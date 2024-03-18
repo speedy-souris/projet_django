@@ -13,6 +13,7 @@
               {{article.types}} - 
               {{article.description}} - 
               {{article.sold}}
+            - <a href="{% url 'article-update' article.id %}">[Modifier]</a>
         </li>
     {% endfor %}
 </ul>
