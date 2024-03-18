@@ -4,6 +4,8 @@
 
 <h1>article</h1>
 
+<a href="{% url 'article-create' %}">Créer un nouveau article</a>
+
 <ul>
     {% for article in articles %}
         <li><a href="{% url 'article-detail' article.id %}">{{article.title}}</a> -

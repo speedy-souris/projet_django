@@ -38,7 +38,3 @@ class Article(models.Model):
 
     def __str__(self):
         return f'{self.title}'
-
-class Contact(models.Model):
-    first_name = models.fields.CharField(max_length=30)
-    email = models.fields.EmailField()

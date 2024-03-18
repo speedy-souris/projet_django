@@ -2,17 +2,18 @@
 
 {% block content %}
 
-<h1>Groupes</h1>
+    <h1>Groupes</h1>
 
-<ul>
-    {% for band in bands %}
-        <li><a href="{% url 'band-detail' band.id %}">{{band.name}}</a>,
-               {{band.genre}},
-               {{band.biography}},
-               {{band.year_formed}},
-               {{band.active}},
-               {{band.official_homepage}},
-        </li>
-    {% endfor %}
-</ul>
+    <a href="{% url 'band-create' %}">Créer un nouveau groupe</a>
+    <ul>
+        {% for band in bands %}
+            <li><a href="{% url 'band-detail' band.id %}">{{band.name}}</a>,
+                {{band.genre}},
+                {{band.biography}},
+                {{band.year_formed}},
+                {{band.active}},
+                {{band.official_homepage}},
+            </li>
+        {% endfor %}
+    </ul>
 {% endblock %}
